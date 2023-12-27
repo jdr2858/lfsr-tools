@@ -2,9 +2,9 @@ import numpy as np
 from hypothesis import strategies as st
 from hypothesis import given
 
-from tools import LFSR, PolynomialError, SeedError
-import tools.utils as utils
-from tools.lfsr_config import *
+from lfsr_tools import LFSR, PolynomialError, SeedError
+import lfsr_tools.utils as utils
+from lfsr_tools.lfsr_config import *
 
 @st.composite
 def poly_seed_strategy(draw, 
