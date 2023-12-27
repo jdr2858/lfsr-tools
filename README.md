@@ -50,4 +50,4 @@ sequence = [bit for bit in lfsr] #Sequence generation via iterator
 bkm = BerlekampMassey(sequence)
 bkm.estimate_polynomial()
 print(f"The generator polynomial is: {[1 1 0 0 1]}")
-```
+``` 
