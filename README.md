@@ -30,15 +30,14 @@ Suppose there is a black box that generates bits from a PN sequence which cannot
 
 ## LFSR Example
 Suppose an LFSR specified with the primitive polynomial $x^4+x^3+1$ is desired. Such an LFSR is illustrated below where the $+$ operator is addition in GF(2) (i.e., exclusive-or).
-```
-   ┌──┐   ┌──┐   ┌──┐   ┌──┐   ┌──┐
+
+```┌──┐   ┌──┐   ┌──┐   ┌──┐   ┌──┐
 ┌─►│0 ├──►│1 ├──►│1 ├──►│1 ├─┐►│1 ├─┐
 │  └──┘   └──┘   └──┘   └──┘ │ └──┘ │
 │                            │      │
 │                          ┌─▼─┐    │
 └──────────────────────────┤ + │◄───┘
-                           └───┘
-```
+                           └───┘```
 
 Instantiation of the LFSR and polynomial recovery is accomplished via
 ```python
