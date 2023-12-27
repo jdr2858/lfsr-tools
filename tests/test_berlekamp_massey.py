@@ -3,8 +3,8 @@ from hypothesis import strategies as st
 from hypothesis import given
 import pytest
 
-from tools import BerlekampMassey, BerlekampMasseyError, LFSR
-from tools.lfsr_config import *
+from lfsr_tools import BerlekampMassey, BerlekampMasseyError, LFSR
+from lfsr_tools.lfsr_config import *
 
 
 @given(st.lists(st.sampled_from([0,1]), min_size=0, max_size=64))
