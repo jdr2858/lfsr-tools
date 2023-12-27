@@ -2,9 +2,9 @@ import numpy as np
 from hypothesis import strategies as st
 from hypothesis import given
 
-from lfsr_learning.lfsr import LFSR, PolynomialError, SeedError
-import lfsr_learning.tools as tools
-from lfsr_learning.lfsr_config import *
+from tools import LFSR, PolynomialError, SeedError
+import tools.utils as utils
+from tools.lfsr_config import *
 
 @st.composite
 def poly_seed_strategy(draw, 
@@ -43,7 +43,7 @@ def test_lfsr_instantiation(poly_seed):
         '''Bad seeds are all zero, everything else is fine.'''
         extended_seed = np.r_[0, seed] #Extend the seed to the same length as the polynomial
         poly_mask = np.zeros(len(poly)).astype(int)
-        poly_mask_idx = tools.find_most_significant_bit(poly)
+        poly_mask_idx = utils.find_most_significant_bit(poly)
         poly_mask[:poly_mask_idx+1] = 1
         test_string = extended_seed & poly_mask #
         assert np.sum(test_string) == 0 #Check the remaining seed bits to make sure there is at least one remaining nonzero bit
@@ -54,7 +54,7 @@ def test_lfsr_iteration(poly_sets = [POLY1, POLY2, POLY3, POLY4, POLY5]):
     polynomial up to order five.
     '''
     def check_correlation_property(bits):
-        corr = tools.circular_autocorrelation(bits, mode='bpsk')
+        corr = utils.circular_autocorrelation(bits, mode='bpsk')
         zerolag = (int(corr[0])==len(corr))
         nonzerolag = np.all(np.isclose(np.real(corr[1:]), -1))
 
