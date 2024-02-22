@@ -24,8 +24,10 @@ pluggy==1.4.0
     # via pytest
 pytest==7.4.4
     # via -r requirements.in
-setuptools-scm==8.0.4
-    # via -r requirements.in
+setuptools-scm[toml]==8.0.4
+    # via
+    #   -r requirements.in
+    #   setuptools-scm
 sortedcontainers==2.4.0
     # via hypothesis
 tomli==2.0.1
