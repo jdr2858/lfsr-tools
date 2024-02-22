@@ -21,3 +21,4 @@ Homepage = "https://github.com/jroth2858/lfsr-tools"
 Issues = "https://github.com/jroth2858/lfsr-tools/issues"
 
 [tool.setuptools_scm]
+write_to = "lfsr_tools/_version.py"
