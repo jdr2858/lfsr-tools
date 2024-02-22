@@ -7,6 +7,7 @@ name = "lfsr-tools"
 authors = [
   { name="jroth2858", email="jroth2858@users.noreply.github.com" },
 ]
+dynamic = ["version"]
 description = "Tools for pseudo-random number sequence generation and LFSR recovery."
 readme = "README.md"
 requires-python = ">=3.9"
