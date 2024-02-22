@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -22,3 +22,4 @@ Homepage = "https://github.com/jroth2858/lfsr-tools"
 Issues = "https://github.com/jroth2858/lfsr-tools/issues"
 
 [tool.setuptools_scm]
+write_to = lfsr-tools/lfsr_tools/_version.py
