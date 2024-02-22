@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lfsr-tools"
-version = {attr = "lfsr-tools.__version__"}
+version = "lfsr-tools.__version__"
 authors = [
   { name="jroth2858", email="jroth2858@users.noreply.github.com" },
 ]
